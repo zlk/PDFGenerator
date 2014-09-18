@@ -11,7 +11,7 @@ This .h and .m class file can create pdf in ios(xcode). just import class files,
      - (IBAction)GetPdf:(id)sender
      {
      // for text pdf, with page number as per text data.
-      pageSize = CGSizeMake(612, 792);
+      CGSize pageSize = CGSizeMake(612, 792);
       NSString *fileName = @"testText.pdf";
       NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
       NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -25,7 +25,7 @@ This .h and .m class file can create pdf in ios(xcode). just import class files,
     
        PdfGenerator *pdf = [[PdfGenerator alloc]init];
     
-       NSString *text = @"Enter Any Text string."
+       NSString *text = @"Enter Any Text string.";
     
        [pdf generatePdfWithFilePath:pdfFileName withPageSize:pageSize withText:text withHeader:@"First Pdf File"];
        [pdf generatePdfWithFilePath:pdfFileName1 withPageSize:pageSize withText:@"Nothing To write, Just Testing With          Image." withImage:@"wp9.jpeg" withHeader:@"Image File"];
